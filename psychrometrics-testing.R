@@ -21,10 +21,10 @@ inhg_per_psi <- 2.03602
 # saturated vapour pressure = 1.5624440099 / 2.03602
 # partial vapor pressure = 0.683088747 / 2.03602
 
-t <- 93
-tw <- 75
-td <- 67.7
-rh <- 0.437192
+t <- 55
+tw <- 55
+td <- 55.1
+rh <- 1
 z <- 0
 
 summer_test <- data.table(variable = c("Dry bulb",
@@ -38,7 +38,7 @@ summer_test <- data.table(variable = c("Dry bulb",
                                        "Saturated vapour pressure",
                                        "Partial vapour pressure")) %>% 
   .[, season := "Summer"] %>% 
-  .[, control := c(t, tw, td, rh, 38.33835, 0.0145318588, 14.2528, 29.921 / 2.03602, 1.562444 / 2.03602, 0.683088747 / 2.03602)] %>% 
+  .[, control := c(t, tw, td, rh, 23.1808, 0.009195, 14.2528, 29.921 / 2.03602, 1.562444 / 2.03602, 0.683088747 / 2.03602)] %>% 
   .[, wet_bulb := c(t,
                     tw,
                     fun_dew_point_temperature_from_wet_bulb_temperature_ip(t, tw, 0),
